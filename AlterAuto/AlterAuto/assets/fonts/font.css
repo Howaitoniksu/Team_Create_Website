@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Tac';
+    src: url(TacticRound-Reg.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tac';
+    src: url(TacticRound-Med.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tac';
+    src: url(TacticRound-Bld.ttf);
+    font-weight: 900;
+    font-style: normal;
+}
