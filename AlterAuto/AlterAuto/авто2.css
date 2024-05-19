@@ -86,9 +86,15 @@ p {
     transition: all 0.3s; 
 }
 .navbar a:hover {
-    background: #ffbf00; 
+    background: #c29b7f; 
     color: #fff;
 }
+
+.navbar a.active {
+    background-color: #c29b7f; /* подсветка текущих страниц авто */
+    color: #fff;
+}
+
 
 .navbar1 {
     padding: 10px 0;
@@ -163,19 +169,6 @@ p {
 .series {
     /* Стили для элемента с классом 'series' */
     margin-top: 20px; 
-}
-
-.serie {
-    /* Стили для элемента с классом 'serie' */
-    color: black; 
-    cursor: pointer;
-    margin: 0 10px; 
-    transition: all 0.3s; 
-}
-
-.serie:hover {
-    /* Стили для наведения на элемент с классом 'serie' */
-    color: blue; 
 }
 
 .car-cards {

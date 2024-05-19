@@ -1,5 +1,5 @@
 body { 
-    background-image: url('assets/imgs/фонкаталога.jpeg'); /* Установка изображения в качестве фона*/
+    background-color: #22242B; /* Установка изображения в качестве фона*/
     background-size: cover; /* Масштабирование фонового изображения для заполнения всей области*/
     text-align: center; /* Центрирование текста по центру*/
     font-family: Arial, sans-serif; /* Установка шрифта для текста*/
