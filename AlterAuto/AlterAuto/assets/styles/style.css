@@ -650,3 +650,27 @@ hr {
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+/*характеристики*/
+.block_auth {  
+    position: relative;  
+}  
+.block_auth img {  
+    position: absolute;  
+    top: 10px;  
+    right: 10px;  
+    width: 250px;  
+    height: 150px;  
+}  
+.close-button {  
+    position: absolute;  
+    top: 10px;  
+    right: 10px;  
+    font-size: 24px;  
+    font-weight: bold;  
+    color: #333;  
+    text-decoration: none;  
+}  
+/* Стиль для сетки */
+div[style*="display: grid;"] { 
+    grid-auto-rows: min-content; /* Автоматическая высота строк */
+}

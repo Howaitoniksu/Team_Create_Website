@@ -24,17 +24,37 @@
                 <a href="sportcar.html" id="sportcar">Спорткар</a>
                 <a href="electrocar.html" id="electrocar" class="active">Электромобили</a>
             </div>
-        </div>
-
-        <div class="car-cards">
-            <div class="car-card">
-                <img src="assets/katalog/электро/i4.webp" alt="i4-Series">
-                <div class="car-info">
-                    <h2>BMW i4</h2>
-                    <p>Цена: 7 050 000₽</p>
-                    <span class="availability">В наличии 10 шт</span> 
-                </div>
-            </div>
+            
+            <!-- <script>
+                function showCarInfo(car) {
+                    // Показать окно с информацией о выбранном автомобиле
+                    alert("Выбран автомобиль: " + car);
+                }
+                
+                window.onload = function() {
+                    var carCards = document.getElementsByClassName("car-card");
+                
+                    for (var i = 0; i < carCards.length; i++) {
+                        var carCard = carCards[i];
+                        carCard.addEventListener("click", function() {
+                            var carName = this.getElementsByClassName("car-info")[0].getElementsByTagName("h2")[0].innerHTML;
+                            showCarInfo(carName);
+                        });
+                    }
+                }
+                </script>
+                </head>
+                <body>  -->
+                <div class="car-cards">
+                    <div class="car-card">
+                        <img src="assets/katalog/электро/i4.webp" alt="i4-Series">
+                        <div class="car-info">
+                            <h2>BMW i4</h2>
+                            <p>Цена: 7 050 000₽</p>
+                            <span class="availability">В наличии 10 шт</span>
+                        </div>
+                    </div>
+            
             <div class="car-card">
                 <img src="assets/katalog/электро/ix.webp" alt="ix">
                 <div class="car-info">
