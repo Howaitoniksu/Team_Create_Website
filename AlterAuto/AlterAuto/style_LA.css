@@ -127,3 +127,37 @@ footer {
 footer p {
     margin: 0;
 }
+
+.center {
+    text-align: center;
+    font-size: 0.75em;
+}
+.block_auth {
+    position: relative;
+}
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #ccc;
+}
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #C78E66;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-size: cover;
+}
+.profile-picture:hover {
+    background-color: #996945;
+}
+.profile-picture .plus {
+    font-size: 2em;
+    color: white;
+}
