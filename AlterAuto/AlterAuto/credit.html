@@ -14,8 +14,17 @@
             color: white;
         }
         #results {
-            margin-top: 20px; 
+            position: fixed; /* Делаем блок фиксированным */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Центрируем блок */
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f8f8f8;
             display: none; /* Сначала скрываем результаты */
+            z-index: 10; /* Устанавливаем приоритет отрисовки */
         }
         .big_con {
             height: 100vh;
@@ -26,6 +35,14 @@
         }
         .big_con.hidden {
             opacity: 0; /* Скрываем при переходе */
+        }
+        #results .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: black; /* Цвет крестика */
+            font-size: 1.2em; /* Размер крестика */
         }
     </style>
 </head>
@@ -38,12 +55,14 @@
             <button class="orange" onclick="calculateCredit()">
                 Рассчитать
             </button>
-            <span class="close-btn" onclick="window.location.href='main.html'">&#10006;</span> 
+            <a href="main.html" class="close-button">&#10006;</a> 
+            <button class="close-button" onclick="window.close()">&#10006;</button> 
         </div>
        
     </div>
 
-    <div id="results" style="display: none;">
+    <div id="results">
+        <button class="close-button" onclick="hideResults()">&#10006;</button>  
         <h3>Результаты расчета</h3>
         <p>Ежемесячный платеж: <span id="monthly-payment"></span></p>
         <p>Переплата по процентам: <span id="total-interest"></span></p>
@@ -61,7 +80,6 @@
                 alert("Пожалуйста, введите корректные значения стоимости автомобиля и срока кредита.");
                 return; 
             }
-
             let interestRate;
             if (loanTerm >= 3 && loanTerm <= 6) {
                 interestRate = 0.09;
@@ -71,16 +89,20 @@
                 interestRate = 0.15;
             }
 
-            const monthlyPayment = (vehiclePrice * interestRate / 12 + vehiclePrice / loanTerm).toFixed(2);
-            const totalInterest = ((vehiclePrice * interestRate * loanTerm) / 12).toFixed(2);
-            const totalPayment = (vehiclePrice + totalInterest).toFixed(2);
+            const monthlyPayment = (vehiclePrice * interestRate / 12 + vehiclePrice / loanTerm);
+            const totalInterest = ((vehiclePrice * interestRate * loanTerm) / 12);
+            const totalPayment = (vehiclePrice + totalInterest);
 
-            document.getElementById('monthly-payment').innerText = monthlyPayment + ' уб.';
-            document.getElementById('total-interest').innerText = totalInterest + ' уб.';
-            document.getElementById('total-payment').innerText = totalPayment + ' уб.';
+            document.getElementById('monthly-payment').innerText = monthlyPayment.toFixed(2) + ' руб.';
+            document.getElementById('total-interest').innerText = totalInterest.toFixed(2) + ' руб.';
+            document.getElementById('total-payment').innerText = totalPayment.toFixed(2) + ' руб.';
 
-            document.getElementById('main-container').classList.add('hidden'); // Скрываем форму
+            // document.getElementById('main-container').classList.add('hidden'); // Скрываем форму
             document.getElementById('results').style.display = 'block'; // Показываем результаты
+        }
+
+        function hideResults() {
+            document.getElementById('results').style.display = 'none';
         }
     </script>
 </body>
