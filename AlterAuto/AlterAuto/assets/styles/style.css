@@ -709,3 +709,16 @@ div[style*="display: grid;"] {
     font-size: 2em;
     color: white;
 }
+
+/*для двух кнопок на одном уровне*/
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.half-orange {
+    width: 48%;
+    margin-top: 10px;
+}
