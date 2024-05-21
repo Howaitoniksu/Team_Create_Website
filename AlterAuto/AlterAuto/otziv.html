@@ -13,50 +13,21 @@
             <div class="review-container">
                 <div class="review-item">
                     <div class="profile-picture">
-                        <img src="/assets/imgs/чел.jpg" alt="Профиль">
+                        <img src="./assets/imgs/chel.png" alt="Профиль">
                     </div>
                     <div class="review-info">
                         <p class="review-name">Иван Иванов</p>
-                        <p class="review-text">Отзыв об автосалоне импортных машин.</p>
+                        <p class="review-text">Впечатляющий выбор. АлтерАвто предлагает широкую номенклатуру импортных автомобилей, от элегантных седанов до мощных внедорожников, способных удовлетворить самые разнообразные вкусовые предпочтения.</p>
                     </div>
                 </div>
             </div>
             <div class="arrow-container" style="margin-top: 20px;">
-                <span class="arrow left-arrow" onclick="showPreviousReview()">&lt;</span>
-                <span class="arrow right-arrow" onclick="showNextReview()">&gt;</span>
+                <span class="arrow left-arrow" onclick="window.location.href='otzv2.html'">&lt;</span>
+                <span class="arrow right-arrow" onclick="window.location.href='otzv3.html'">&gt;</span>
             </div>
             <span class="close" onclick="window.location.href='main.html'">&times;</span>
         </div>
     </div>
-    <script>
-        const reviews = [
-            { name: "Иван Иванов", text: "Отзыв об автосалоне импортных машин.", avatar: "avatar.jpg" },
-            { name: "Петр Петров", text: "Отличный сервис, рекомендую!", avatar: "avatar2.jpg" },
-            // Добавьте больше отзывов
-        ];
-
-        let currentReviewIndex = 0;
-
-        function showPreviousReview() {
-            currentReviewIndex = (currentReviewIndex - 1 + reviews.length) % reviews.length;
-            updateReview();
-        }
-
-        function showNextReview() {
-            currentReviewIndex = (currentReviewIndex + 1) % reviews.length;
-            updateReview();
-        }
-
-        function updateReview() {
-            const review = reviews[currentReviewIndex];
-            const reviewItem = document.querySelector('.review-item');
-            reviewItem.querySelector('.review-name').textContent = review.name;
-            reviewItem.querySelector('.review-text').textContent = review.text;
-            reviewItem.querySelector('.profile-picture img').src = review.avatar;
-        }
-
-        updateReview();
-    </script>
     <style>
         .big_con {
             display: flex;
@@ -87,20 +58,26 @@
             border-radius: 10px;
             width: 100%;
         }
-
         .profile-picture {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 20px;
-        }
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+  position: relative;
+}
 
-        .profile-picture img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+        
 
         .review-info {
             flex: 1;
