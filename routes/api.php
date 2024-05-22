@@ -28,4 +28,5 @@ Route::group(['prefix' => 'callback'], function () {
 
 Route::group(['prefix' => 'user'], function () {
     Route::get('/', [UserController::class, 'getUserByToken']);
+    Route::post('/code', [UserController::class, 'sendCode']);
 });
