@@ -1,0 +1,312 @@
+Index: AlterAuto/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <link rel=\"stylesheet\" href=\"./assets/styles/style.css\">\r\n    <title>Авторизация</title>\r\n</head>\r\n<body>\r\n    <div class=\"big_con\" style=\"height: 100vh; display: flex; justify-content: center; align-items: center;\">\r\n        <div class=\"block_auth\">\r\n            <h2 style=\"color: black; padding: 0;\">АВТОРИЗАЦИЯ</h2>\r\n            <input type=\"tel\" placeholder=\"phone\" class=\"enter\">\r\n            <button type=\"submit\" onclick=\"sendSms()\">Получить код</button>\r\n            <div id=\"message\" style=\"display:none;\"></div>\r\n            <script>\r\n                function generateRandomCode() {\r\n                    let code = \"\";\r\n                    for (let i = 0; i < 6; i++) {\r\n                        code += Math.floor(Math.random() * 10);\r\n                    }\r\n                    return code;\r\n                }\r\n                function sendSms() {\r\n                    const phoneNumber = document.querySelector('.enter').value;\r\n                    const code = generateRandomCode();\r\n                    // Формируем URL для отправки SMS\r\n                    const apiKey = 'TnJMkOMQlkIujqACXdndOgquVdy2';\r\n                    const url = `https://gate.smsaero.ru/v2/sms/send?number=${phoneNumber}&text=${encodeURIComponent('Ваш код: ' + code)}&api_key=${apiKey}&sign=SMS%20Aero`;\r\n                    const ur2 = 'https://email:api_key@gate.smsaero.ru/v2/sms/send?number=79990000000&text=your+text&sign=SMS Aero'\r\n                    // Отправляем запрос на сервер\r\n                    const xhr = new XMLHttpRequest();\r\n                    xhr.open('GET', url, true);\r\n                    xhr.onload = function() {\r\n                        if (xhr.status === 200) {\r\n                            console.log(`SMS отправлено на номер ${phoneNumber}: Код - ${code}`);\r\n                            document.getElementById('message').style.display = 'block';\r\n                            document.getElementById('message').innerText = 'Код отправлен на номер ' + phoneNumber;\r\n                        } else {\r\n                            console.error(`Ошибка отправки SMS на номер ${phoneNumber}: ${xhr.statusText}`);\r\n                            document.getElementById('message').style.display = 'block';\r\n                            document.getElementById('message').innerText = 'Ошибка отправки кода';\r\n                        }\r\n                    };\r\n                    xhr.onerror = function() {\r\n                        console.error(`Ошибка запроса на отправку SMS на номер ${phoneNumber}`);\r\n                        document.getElementById('message').style.display = 'block';\r\n                        document.getElementById('message').innerText = 'Ошибка запроса кода';\r\n                    };\r\n                    xhr.send();\r\n                }\r\n            </script>\r\n            <p class=\"p14\">Еще не с нами? <a href=\"registration.html\"><u>Зарегистрируйтесь!</u></a></p>\r\n        </div>\r\n    </div>\r\n</body>\r\n</html>
+===================================================================
+diff --git a/AlterAuto/index.html b/AlterAuto/index.html
+--- a/AlterAuto/index.html	
++++ b/AlterAuto/index.html	
+@@ -10,46 +10,11 @@
+     <div class="big_con" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+         <div class="block_auth">
+             <h2 style="color: black; padding: 0;">АВТОРИЗАЦИЯ</h2>
+-            <input type="tel" placeholder="phone" class="enter">
+-            <button type="submit" onclick="sendSms()">Получить код</button>
+-            <div id="message" style="display:none;"></div>
+-            <script>
+-                function generateRandomCode() {
+-                    let code = "";
+-                    for (let i = 0; i < 6; i++) {
+-                        code += Math.floor(Math.random() * 10);
+-                    }
+-                    return code;
+-                }
+-                function sendSms() {
+-                    const phoneNumber = document.querySelector('.enter').value;
+-                    const code = generateRandomCode();
+-                    // Формируем URL для отправки SMS
+-                    const apiKey = 'TnJMkOMQlkIujqACXdndOgquVdy2';
+-                    const url = `https://gate.smsaero.ru/v2/sms/send?number=${phoneNumber}&text=${encodeURIComponent('Ваш код: ' + code)}&api_key=${apiKey}&sign=SMS%20Aero`;
+-                    const ur2 = 'https://email:api_key@gate.smsaero.ru/v2/sms/send?number=79990000000&text=your+text&sign=SMS Aero'
+-                    // Отправляем запрос на сервер
+-                    const xhr = new XMLHttpRequest();
+-                    xhr.open('GET', url, true);
+-                    xhr.onload = function() {
+-                        if (xhr.status === 200) {
+-                            console.log(`SMS отправлено на номер ${phoneNumber}: Код - ${code}`);
+-                            document.getElementById('message').style.display = 'block';
+-                            document.getElementById('message').innerText = 'Код отправлен на номер ' + phoneNumber;
+-                        } else {
+-                            console.error(`Ошибка отправки SMS на номер ${phoneNumber}: ${xhr.statusText}`);
+-                            document.getElementById('message').style.display = 'block';
+-                            document.getElementById('message').innerText = 'Ошибка отправки кода';
+-                        }
+-                    };
+-                    xhr.onerror = function() {
+-                        console.error(`Ошибка запроса на отправку SMS на номер ${phoneNumber}`);
+-                        document.getElementById('message').style.display = 'block';
+-                        document.getElementById('message').innerText = 'Ошибка запроса кода';
+-                    };
+-                    xhr.send();
+-                }
+-            </script>
++            <input type="text" placeholder="Email" class="enter">
++            <input type="password" placeholder="Пароль" class="enter">
++            <button class="orange">
++                <a href="main.html" class="p14">ВОЙТИ</p>
++            </button>
+             <p class="p14">Еще не с нами? <a href="registration.html"><u>Зарегистрируйтесь!</u></a></p>
+         </div>
+     </div>
+diff --git a/AlterAuto/AlterAuto/assets/styles/style.css b/AlterAuto/assets/styles/style.css
+rename from AlterAuto/AlterAuto/assets/styles/style.css
+rename to AlterAuto/assets/styles/style.css
+diff --git a/AlterAuto/AlterAuto/1bmwI4.html b/AlterAuto/1bmwI4.html
+rename from AlterAuto/AlterAuto/1bmwI4.html
+rename to AlterAuto/1bmwI4.html
+diff --git a/AlterAuto/AlterAuto/1bmwIX.html b/AlterAuto/1bmwIX.html
+rename from AlterAuto/AlterAuto/1bmwIX.html
+rename to AlterAuto/1bmwIX.html
+diff --git a/AlterAuto/AlterAuto/1teslamodel3.html b/AlterAuto/1teslamodel3.html
+rename from AlterAuto/AlterAuto/1teslamodel3.html
+rename to AlterAuto/1teslamodel3.html
+diff --git a/AlterAuto/AlterAuto/1teslaSPlaid.html b/AlterAuto/1teslaSPlaid.html
+rename from AlterAuto/AlterAuto/1teslaSPlaid.html
+rename to AlterAuto/1teslaSPlaid.html
+diff --git a/AlterAuto/AlterAuto/1zeekr-007.html b/AlterAuto/1zeekr-007.html
+rename from AlterAuto/AlterAuto/1zeekr-007.html
+rename to AlterAuto/1zeekr-007.html
+diff --git a/AlterAuto/AlterAuto/1zeekr001.html b/AlterAuto/1zeekr001.html
+rename from AlterAuto/AlterAuto/1zeekr001.html
+rename to AlterAuto/1zeekr001.html
+diff --git a/AlterAuto/AlterAuto/2bmw7ser.html b/AlterAuto/2bmw7ser.html
+rename from AlterAuto/AlterAuto/2bmw7ser.html
+rename to AlterAuto/2bmw7ser.html
+diff --git a/AlterAuto/AlterAuto/2bmwi7.html b/AlterAuto/2bmwi7.html
+rename from AlterAuto/AlterAuto/2bmwi7.html
+rename to AlterAuto/2bmwi7.html
+diff --git a/AlterAuto/AlterAuto/2maybach.html b/AlterAuto/2maybach.html
+rename from AlterAuto/AlterAuto/2maybach.html
+rename to AlterAuto/2maybach.html
+diff --git a/AlterAuto/AlterAuto/2mersSclass.html b/AlterAuto/2mersSclass.html
+rename from AlterAuto/AlterAuto/2mersSclass.html
+rename to AlterAuto/2mersSclass.html
+diff --git a/AlterAuto/AlterAuto/2nersBenz63AMG.html b/AlterAuto/2nersBenz63AMG.html
+rename from AlterAuto/AlterAuto/2nersBenz63AMG.html
+rename to AlterAuto/2nersBenz63AMG.html
+diff --git a/AlterAuto/AlterAuto/2rollsroyce.html b/AlterAuto/2rollsroyce.html
+rename from AlterAuto/AlterAuto/2rollsroyce.html
+rename to AlterAuto/2rollsroyce.html
+diff --git a/AlterAuto/AlterAuto/3ceed.html b/AlterAuto/3ceed.html
+rename from AlterAuto/AlterAuto/3ceed.html
+rename to AlterAuto/3ceed.html
+diff --git a/AlterAuto/AlterAuto/3creta.html b/AlterAuto/3creta.html
+rename from AlterAuto/AlterAuto/3creta.html
+rename to AlterAuto/3creta.html
+diff --git a/AlterAuto/AlterAuto/3jetta.html b/AlterAuto/3jetta.html
+rename from AlterAuto/AlterAuto/3jetta.html
+rename to AlterAuto/3jetta.html
+diff --git a/AlterAuto/AlterAuto/3polo.html b/AlterAuto/3polo.html
+rename from AlterAuto/AlterAuto/3polo.html
+rename to AlterAuto/3polo.html
+diff --git a/AlterAuto/AlterAuto/3riox.html b/AlterAuto/3riox.html
+rename from AlterAuto/AlterAuto/3riox.html
+rename to AlterAuto/3riox.html
+diff --git a/AlterAuto/AlterAuto/3santafe.html b/AlterAuto/3santafe.html
+rename from AlterAuto/AlterAuto/3santafe.html
+rename to AlterAuto/3santafe.html
+diff --git a/AlterAuto/AlterAuto/3solaris.html b/AlterAuto/3solaris.html
+rename from AlterAuto/AlterAuto/3solaris.html
+rename to AlterAuto/3solaris.html
+diff --git a/AlterAuto/AlterAuto/3tucson.html b/AlterAuto/3tucson.html
+rename from AlterAuto/AlterAuto/3tucson.html
+rename to AlterAuto/3tucson.html
+diff --git a/AlterAuto/AlterAuto/4a3.html b/AlterAuto/4a3.html
+rename from AlterAuto/AlterAuto/4a3.html
+rename to AlterAuto/4a3.html
+diff --git a/AlterAuto/AlterAuto/4a4.html b/AlterAuto/4a4.html
+rename from AlterAuto/AlterAuto/4a4.html
+rename to AlterAuto/4a4.html
+diff --git a/AlterAuto/AlterAuto/4hijlander.html b/AlterAuto/4hijlander.html
+rename from AlterAuto/AlterAuto/4hijlander.html
+rename to AlterAuto/4hijlander.html
+diff --git a/AlterAuto/AlterAuto/4m2.html b/AlterAuto/4m2.html
+rename from AlterAuto/AlterAuto/4m2.html
+rename to AlterAuto/4m2.html
+diff --git a/AlterAuto/AlterAuto/4m4.html b/AlterAuto/4m4.html
+rename from AlterAuto/AlterAuto/4m4.html
+rename to AlterAuto/4m4.html
+diff --git a/AlterAuto/AlterAuto/4m5.html b/AlterAuto/4m5.html
+rename from AlterAuto/AlterAuto/4m5.html
+rename to AlterAuto/4m5.html
+diff --git a/AlterAuto/AlterAuto/4m8.html b/AlterAuto/4m8.html
+rename from AlterAuto/AlterAuto/4m8.html
+rename to AlterAuto/4m8.html
+diff --git a/AlterAuto/AlterAuto/4rav4.html b/AlterAuto/4rav4.html
+rename from AlterAuto/AlterAuto/4rav4.html
+rename to AlterAuto/4rav4.html
+diff --git a/AlterAuto/AlterAuto/5296GTB.html b/AlterAuto/5296GTB.html
+rename from AlterAuto/AlterAuto/5296GTB.html
+rename to AlterAuto/5296GTB.html
+diff --git a/AlterAuto/AlterAuto/5chiron.html b/AlterAuto/5chiron.html
+rename from AlterAuto/AlterAuto/5chiron.html
+rename to AlterAuto/5chiron.html
+diff --git a/AlterAuto/AlterAuto/5lambahuric.html b/AlterAuto/5lambahuric.html
+rename from AlterAuto/AlterAuto/5lambahuric.html
+rename to AlterAuto/5lambahuric.html
+diff --git a/AlterAuto/AlterAuto/5mclaren.html b/AlterAuto/5mclaren.html
+rename from AlterAuto/AlterAuto/5mclaren.html
+rename to AlterAuto/5mclaren.html
+diff --git a/AlterAuto/AlterAuto/5porshe.html b/AlterAuto/5porshe.html
+rename from AlterAuto/AlterAuto/5porshe.html
+rename to AlterAuto/5porshe.html
+diff --git a/AlterAuto/AlterAuto/5r88.html b/AlterAuto/5r88.html
+rename from AlterAuto/AlterAuto/5r88.html
+rename to AlterAuto/5r88.html
+diff --git a/AlterAuto/AlterAuto/API.js b/AlterAuto/API.js
+rename from AlterAuto/AlterAuto/API.js
+rename to AlterAuto/API.js
+diff --git a/AlterAuto/AlterAuto/avtorisation.html b/AlterAuto/avtorisation.html
+rename from AlterAuto/AlterAuto/avtorisation.html
+rename to AlterAuto/avtorisation.html
+diff --git a/AlterAuto/AlterAuto/bisnes.html b/AlterAuto/bisnes.html
+rename from AlterAuto/AlterAuto/bisnes.html
+rename to AlterAuto/bisnes.html
+diff --git a/AlterAuto/AlterAuto/credit.html b/AlterAuto/credit.html
+rename from AlterAuto/AlterAuto/credit.html
+rename to AlterAuto/credit.html
+diff --git a/AlterAuto/AlterAuto/econom.html b/AlterAuto/econom.html
+rename from AlterAuto/AlterAuto/econom.html
+rename to AlterAuto/econom.html
+diff --git a/AlterAuto/AlterAuto/electrocar.html b/AlterAuto/electrocar.html
+rename from AlterAuto/AlterAuto/electrocar.html
+rename to AlterAuto/electrocar.html
+diff --git a/AlterAuto/AlterAuto/instruction.txt b/AlterAuto/instruction.txt
+rename from AlterAuto/AlterAuto/instruction.txt
+rename to AlterAuto/instruction.txt
+diff --git a/AlterAuto/AlterAuto/izmpassword.html b/AlterAuto/izmpassword.html
+rename from AlterAuto/AlterAuto/izmpassword.html
+rename to AlterAuto/izmpassword.html
+diff --git a/AlterAuto/AlterAuto/katalog.html b/AlterAuto/katalog.html
+rename from AlterAuto/AlterAuto/katalog.html
+rename to AlterAuto/katalog.html
+diff --git a/AlterAuto/AlterAuto/komfort.html b/AlterAuto/komfort.html
+rename from AlterAuto/AlterAuto/komfort.html
+rename to AlterAuto/komfort.html
+diff --git a/AlterAuto/AlterAuto/kredit.js b/AlterAuto/kredit.js
+rename from AlterAuto/AlterAuto/kredit.js
+rename to AlterAuto/kredit.js
+diff --git a/AlterAuto/AlterAuto/lifeAkk.html b/AlterAuto/lifeAkk.html
+rename from AlterAuto/AlterAuto/lifeAkk.html
+rename to AlterAuto/lifeAkk.html
+diff --git a/AlterAuto/AlterAuto/main.html b/AlterAuto/main.html
+rename from AlterAuto/AlterAuto/main.html
+rename to AlterAuto/main.html
+diff --git a/AlterAuto/AlterAuto/otziv.html b/AlterAuto/otziv.html
+rename from AlterAuto/AlterAuto/otziv.html
+rename to AlterAuto/otziv.html
+diff --git a/AlterAuto/AlterAuto/otzv10.html b/AlterAuto/otzv10.html
+rename from AlterAuto/AlterAuto/otzv10.html
+rename to AlterAuto/otzv10.html
+diff --git a/AlterAuto/AlterAuto/otzv2.html b/AlterAuto/otzv2.html
+rename from AlterAuto/AlterAuto/otzv2.html
+rename to AlterAuto/otzv2.html
+diff --git a/AlterAuto/AlterAuto/otzv3.html b/AlterAuto/otzv3.html
+rename from AlterAuto/AlterAuto/otzv3.html
+rename to AlterAuto/otzv3.html
+diff --git a/AlterAuto/AlterAuto/otzv4.html b/AlterAuto/otzv4.html
+rename from AlterAuto/AlterAuto/otzv4.html
+rename to AlterAuto/otzv4.html
+diff --git a/AlterAuto/AlterAuto/otzv5.html b/AlterAuto/otzv5.html
+rename from AlterAuto/AlterAuto/otzv5.html
+rename to AlterAuto/otzv5.html
+diff --git a/AlterAuto/AlterAuto/otzv6.html b/AlterAuto/otzv6.html
+rename from AlterAuto/AlterAuto/otzv6.html
+rename to AlterAuto/otzv6.html
+diff --git a/AlterAuto/AlterAuto/otzv7.html b/AlterAuto/otzv7.html
+rename from AlterAuto/AlterAuto/otzv7.html
+rename to AlterAuto/otzv7.html
+diff --git a/AlterAuto/AlterAuto/otzv8.html b/AlterAuto/otzv8.html
+rename from AlterAuto/AlterAuto/otzv8.html
+rename to AlterAuto/otzv8.html
+diff --git a/AlterAuto/AlterAuto/otzv9.html b/AlterAuto/otzv9.html
+rename from AlterAuto/AlterAuto/otzv9.html
+rename to AlterAuto/otzv9.html
+diff --git a/AlterAuto/AlterAuto/registration.html b/AlterAuto/registration.html
+rename from AlterAuto/AlterAuto/registration.html
+rename to AlterAuto/registration.html
+diff --git a/AlterAuto/AlterAuto/scrip.js b/AlterAuto/scrip.js
+rename from AlterAuto/AlterAuto/scrip.js
+rename to AlterAuto/scrip.js
+diff --git a/AlterAuto/AlterAuto/sportcar.html b/AlterAuto/sportcar.html
+rename from AlterAuto/AlterAuto/sportcar.html
+rename to AlterAuto/sportcar.html
+diff --git a/AlterAuto/AlterAuto/style_LA.css b/AlterAuto/style_LA.css
+rename from AlterAuto/AlterAuto/style_LA.css
+rename to AlterAuto/style_LA.css
+diff --git a/AlterAuto/AlterAuto/support.html b/AlterAuto/support.html
+rename from AlterAuto/AlterAuto/support.html
+rename to AlterAuto/support.html
+diff --git a/AlterAuto/AlterAuto/testDrive.html b/AlterAuto/testDrive.html
+rename from AlterAuto/AlterAuto/testDrive.html
+rename to AlterAuto/testDrive.html
+diff --git a/AlterAuto/AlterAuto/vvodKoda.html b/AlterAuto/vvodKoda.html
+rename from AlterAuto/AlterAuto/vvodKoda.html
+rename to AlterAuto/vvodKoda.html
+diff --git a/AlterAuto/AlterAuto/zvonok.html b/AlterAuto/zvonok.html
+rename from AlterAuto/AlterAuto/zvonok.html
+rename to AlterAuto/zvonok.html
+diff --git a/AlterAuto/AlterAuto/авто2.css b/AlterAuto/авто2.css
+rename from AlterAuto/AlterAuto/авто2.css
+rename to AlterAuto/авто2.css
+diff --git a/AlterAuto/AlterAuto/автомобили.css b/AlterAuto/автомобили.css
+rename from AlterAuto/AlterAuto/автомобили.css
+rename to AlterAuto/автомобили.css
+diff --git a/AlterAuto/AlterAuto/assets/imgs/i-arrow.svg b/AlterAuto/assets/imgs/i-arrow.svg
+rename from AlterAuto/AlterAuto/assets/imgs/i-arrow.svg
+rename to AlterAuto/assets/imgs/i-arrow.svg
+diff --git a/AlterAuto/AlterAuto/assets/imgs/i-calendar.svg b/AlterAuto/assets/imgs/i-calendar.svg
+rename from AlterAuto/AlterAuto/assets/imgs/i-calendar.svg
+rename to AlterAuto/assets/imgs/i-calendar.svg
+diff --git a/AlterAuto/AlterAuto/assets/imgs/i-fire.svg b/AlterAuto/assets/imgs/i-fire.svg
+rename from AlterAuto/AlterAuto/assets/imgs/i-fire.svg
+rename to AlterAuto/assets/imgs/i-fire.svg
+diff --git a/AlterAuto/AlterAuto/assets/imgs/i-light.svg b/AlterAuto/assets/imgs/i-light.svg
+rename from AlterAuto/AlterAuto/assets/imgs/i-light.svg
+rename to AlterAuto/assets/imgs/i-light.svg
+diff --git a/AlterAuto/AlterAuto/assets/imgs/i-like.svg b/AlterAuto/assets/imgs/i-like.svg
+rename from AlterAuto/AlterAuto/assets/imgs/i-like.svg
+rename to AlterAuto/assets/imgs/i-like.svg
+diff --git a/AlterAuto/AlterAuto/assets/imgs/i-obmen.svg b/AlterAuto/assets/imgs/i-obmen.svg
+rename from AlterAuto/AlterAuto/assets/imgs/i-obmen.svg
+rename to AlterAuto/assets/imgs/i-obmen.svg
+diff --git a/AlterAuto/AlterAuto/assets/imgs/i-place.svg b/AlterAuto/assets/imgs/i-place.svg
+rename from AlterAuto/AlterAuto/assets/imgs/i-place.svg
+rename to AlterAuto/assets/imgs/i-place.svg
+diff --git a/AlterAuto/AlterAuto/assets/imgs/i-shield.svg b/AlterAuto/assets/imgs/i-shield.svg
+rename from AlterAuto/AlterAuto/assets/imgs/i-shield.svg
+rename to AlterAuto/assets/imgs/i-shield.svg
+diff --git a/AlterAuto/AlterAuto/assets/imgs/i1.svg b/AlterAuto/assets/imgs/i1.svg
+rename from AlterAuto/AlterAuto/assets/imgs/i1.svg
+rename to AlterAuto/assets/imgs/i1.svg
+diff --git a/AlterAuto/AlterAuto/assets/imgs/i2.svg b/AlterAuto/assets/imgs/i2.svg
+rename from AlterAuto/AlterAuto/assets/imgs/i2.svg
+rename to AlterAuto/assets/imgs/i2.svg
+diff --git a/AlterAuto/AlterAuto/assets/imgs/i3.svg b/AlterAuto/assets/imgs/i3.svg
+rename from AlterAuto/AlterAuto/assets/imgs/i3.svg
+rename to AlterAuto/assets/imgs/i3.svg
+diff --git a/AlterAuto/AlterAuto/assets/imgs/i4.svg b/AlterAuto/assets/imgs/i4.svg
+rename from AlterAuto/AlterAuto/assets/imgs/i4.svg
+rename to AlterAuto/assets/imgs/i4.svg
+diff --git a/AlterAuto/AlterAuto/assets/imgs/tg.svg b/AlterAuto/assets/imgs/tg.svg
+rename from AlterAuto/AlterAuto/assets/imgs/tg.svg
+rename to AlterAuto/assets/imgs/tg.svg
+diff --git a/AlterAuto/AlterAuto/assets/imgs/vk.svg b/AlterAuto/assets/imgs/vk.svg
+rename from AlterAuto/AlterAuto/assets/imgs/vk.svg
+rename to AlterAuto/assets/imgs/vk.svg
+diff --git a/AlterAuto/AlterAuto/assets/fonts/desktop.ini b/AlterAuto/assets/fonts/desktop.ini
+rename from AlterAuto/AlterAuto/assets/fonts/desktop.ini
+rename to AlterAuto/assets/fonts/desktop.ini
+diff --git a/AlterAuto/AlterAuto/assets/fonts/font.css b/AlterAuto/assets/fonts/font.css
+rename from AlterAuto/AlterAuto/assets/fonts/font.css
+rename to AlterAuto/assets/fonts/font.css
