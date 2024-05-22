@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Dealership App</title>
+    <link rel="stylesheet" href="style_LA.css">
+</head>
+<body>
+    <main>
+
+        <section id="profile">
+            <h2>Профиль</h2>
+            <form>
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="lastName">Фамилия:</label>
+                <input type="text" id="lastName" name="lastName"><br><br>
+                <label for="contactInfo">Номер телефона:</label>
+                <input type="text" id="contactInfo" name="contactInfo"><br><br>
+                <button type="submit">Сохранить изменения</button>
+            </form>
+            <button id="changePassword">Изменить пароль</button>
+        </section>
+
+
+        <section id="purchase-history">
+            <h2>Мои автомобили</h2>
+            <ul id="purchase-list">
+            </ul>
+        </section>
+
+        <a href="testDrive.html">
+          <button class="orange">Записаться на тест-драйв</button>
+      </a>
+
+        <section id="preliminary-calculation">
+            <h2>Расчет кредита</h2>
+            <form id="credit-form">
+              <label for="vehicle-price">Введите цену автомобиля:</label>
+              <input type="number" id="vehicle-price" name="vehicle-price" required><br><br>
+          
+              <label for="loan-term">Срок кредита (в месяцах):</label>
+              <input type="number" id="loan-term" name="loan-term" required><br><br>
+          
+              <button type="submit">Рассчитать</button>
+            </form>
+          
+            <div id="results" style="display: none;">
+              <p>Ежемесячный платеж: <span id="monthly-payment"></span> руб.</p>
+              <p>Общая сумма процентов: <span id="total-interest"></span> руб.</p>
+              <p>Общая сумма к выплате: <span id="total-payment"></span> руб.</p>
+            </div>
+          </section>
+          
+        
+            <div id="results" style="display:none;">
+              <h3>Результаты расчета</h3>
+              <p>Ежемесячный платеж: <span id="monthly-payment"></span></p>
+              <p>Переплата по процентам: <span id="total-interest"></span></p>
+              <p>Общая сумма выплат: <span id="total-payment"></span></p>
+            </div>
+          </section>
+          <script src="kredit.js"></script>
+        
+    </main>
+    <footer>
+        <p>&copy; 2023 Auto Dealership App</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

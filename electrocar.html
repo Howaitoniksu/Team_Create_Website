@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>автомобили</title>
+    <link href="автомобили.css" rel="stylesheet" type="text/css">
+    <link href="авто2.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="content">
+    <div class="navbar">
+        <a href="katalog.html">Автомобили</a>
+        <a href="main.html">На Главную</a>
+    </div>
+
+    <h1>Выберите свой автомобиль</h1>
+
+    <div class="series">
+        <div class="navbar">
+            <a href="econom.html" id="ekonom">Эконом</a>
+            <a href="komfort.html" id="comfort">Комфорт</a>
+            <a href="bisnes.html" id="bizness">Бизнес</a>
+            <a href="sportcar.html" id="sportcar">Спорткар</a>
+            <a class="active" href="electrocar.html" id="electrocar">Электромобили</a>
+        </div>
+
+        <!-- <script>
+            function showCarInfo(car) {
+                // Показать окно с информацией о выбранном автомобиле
+                alert("Выбран автомобиль: " + car);
+            }
+
+            window.onload = function() {
+                var carCards = document.getElementsByClassName("car-card");
+
+                for (var i = 0; i < carCards.length; i++) {
+                    var carCard = carCards[i];
+                    carCard.addEventListener("click", function() {
+                        var carName = this.getElementsByClassName("car-info")[0].getElementsByTagName("h2")[0].innerHTML;
+                        showCarInfo(carName);
+                    });
+                }
+            }
+            </script>
+            </head>
+            <body>  -->
+        <div class="car-cards">
+            <div class="car-card">
+                <img alt="i4-Series" src="assets/katalog/электро/i4.webp">
+                <div class="car-info">
+                    <h2>BMW i4</h2>
+                    <p>Цена: 7 050 000₽</p>
+                    <span class="availability">В наличии 10 шт</span>
+                </div>
+            </div>
+
+            <div class="car-card">
+                <img alt="ix" src="assets/katalog/электро/ix.webp">
+                <div class="car-info">
+                    <h2>BMW iX</h2>
+                    <p>Цена: 12 700 000₽</p>
+                    <span class="availability">В наличии 13 шт</span>
+                </div>
+            </div>
+            <div class="car-card">
+                <img alt="zeekr-007" src="assets/katalog/электро/zeekr007.webp">
+                <div class="car-info">
+                    <h2>Zeekr-007</h2>
+                    <p>Цена: 10 490 000₽</p>
+                    <span class="availability">В наличии 8 шт</span>
+                </div>
+            </div>
+            <div class="car-card">
+                <img alt="S Plaid" src="assets/katalog/электро/plaid.avif">
+                <div class="car-info">
+                    <h2>Tesla S Plaid</h2>
+                    <p>Цена: 20 210 000₽</p>
+                    <span class="availability">В наличии 5 шт</span>
+                </div>
+            </div>
+            <div class="car-card">
+                <img alt="zeekr-001" src="assets/katalog/электро/zeekr-001.png">
+                <div class="car-info">
+                    <h2>Zeekr-001</h2>
+                    <p>Цена: 6 200 000₽</p>
+                    <span class="availability">В наличии 13 шт</span>
+                </div>
+            </div>
+            <div class="car-card">
+                <img alt="Model 3" src="assets/katalog/электро/model3.avif">
+                <div class="car-info">
+                    <h2>Tesla Model 3</h2>
+                    <p>Цена: 6 890 000₽</p>
+                    <span class="availability">В наличии 9 шт</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+.form-container {
+    width: 50%; 
+    margin: 50px auto;
+    padding: 40px; 
+    background-color: rgba(255, 255, 255, 0.7); 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+input[type=text], input[type=email], input[type=tel] {
+    width: 100%; 
+    padding: 10px;
+    margin: 5px 0; 
+    display: block;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+}
+
+select {
+    width: 100%; 
+    padding: 10px; 
+    margin: 5px 0; 
+    display: block; 
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+}
+
+.form-wrapper {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+}
+
+.form-container1 {
+    background-color: rgba(255, 255, 255, 0.5); 
+    padding: 30px; 
+    border-radius: 15px; 
+    border: 3px solid rgba(255, 255, 255, 0.8); 
+    margin: 20px; 
+}
+
+.form-container2 {
+    background-color: rgba(149, 149, 149, 0.708); 
+    padding: 30px; 
+    border-radius: 15px; 
+    border: 3px solid rgba(255, 255, 255, 0.8); 
+    margin: 20px; 
+}
+
+
+<!--main-->
+
+.logo {
+    position: absolute; 
+    top: 20px; 
+    left: 20px; 
+}
+
+.content {
+    color: rgb(255, 255, 255); 
+    margin-top: 100px; 
+}
+
+h1 {
+    font-size: 36px;
+}
+p {
+    font-size: 36px; 
+}
+
+.navbar {
+    background-color: #C78E66;
+    padding: 10px 0;
+    margin-top: 10px; 
+}
+
+.navbar a {
+    display: inline-block;
+    padding: 10px 20px; 
+    margin: 0 10px;
+    text-decoration: none; 
+    color: #000000;
+    border: 1px solid transparent; 
+    border-radius: 5px; 
+    transition: all 0.3s; 
+}
+.navbar a:hover {
+    background: #c29b7f; 
+    color: #fff;
+}
+
+.navbar a.active {
+    background-color: #c29b7f; /* подсветка текущих страниц авто */
+    color: #fff;
+}
+
+
+.navbar1 {
+    padding: 10px 0;
+    margin-top: 10px;
+}
+
+.navbar1 a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #000;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.navbar1 a:hover {
+    background: #ffbf00; 
+    color: #fff;
+}
+
+.navbar2 {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.navbar2 a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #000;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.navbar2 a:hover {
+    background: #ffbf00; 
+    color: #fff;
+}
+
+.icon {
+    /* Стили для элемента с классом 'icon' */
+    display: inline-block; 
+}
+
+.logo {
+    /* Дублирующие стили для элемента с классом 'logo' */
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+}
+
+.icons {
+    /* Стили для элемента с классом 'icons' */
+    position: absolute; 
+    top: 10px; 
+    right: 10px;
+}
+
+.icons a {
+    /* Стили для ссылок внутри элемента с классом 'icons' */
+    margin-left: 10px; 
+}
+
+/* Стили для раздела 'автомобили' */
+
+.series {
+    /* Стили для элемента с классом 'series' */
+    margin-top: 20px; 
+}
+
+.car-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+.car-card {
+    /* Стили для элементов с классом 'car-card' */
+    position: relative; 
+    margin: 10px;
+    width: calc(25% - 20px);
+    overflow: hidden; /* Скрытие содержимого, выходящего за границы */
+    transition: transform 0.3s; /* Плавное изменение свойства трансформации за 0.3 секунды */
+    background: white; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    padding: 10px; 
+}
+
+.car-card:hover {
+    /* Стили для наведения на элемент с классом 'car-card' */
+    transform: scale(1.1); /* Увеличение масштаба при наведении */
+}
+
+.car-card h2, .car-card p {
+    /* Стили для заголовков и параграфов внутри элемента 'car-card' */
+    color: black; 
+    text-align: center;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.car-card img {
+    width: 100%;
+    height: 150px; /* adjust the height to your desired value */
+    object-fit: cover;
+  }
+.car-info {
+    /* Стили для информации об автомобиле */
+    background-color: rgba(255, 255, 255, 0.8); /* Цвет фона с прозрачностью */
+    position: absolute; /* Абсолютное позиционирование */
+    bottom: 0; /* Расположение внизу */
+    width: 100%; /* Ширина 100% */
+    text-align: center; /* Выравнивание по центру */
+    padding: 10px; /* Внутренние отступы 10px */
+}
+
+.availability {
+    /* Стили для информации о доступности автомобиля */
+    display: none; /* Начальное скрытие элемента */
+    position: absolute; /* Абсолютное позиционирование */
+    bottom: 10px; /* Расположение снизу 10px */
+    left: 50%; /* Расположение по центру по горизонтали */
+    transform: translateX(-50%); /* Центрирование по горизонтали */
+    background-color: rgba(0, 0, 0, 0.7); /* Цвет фона с прозрачностью */
+    color: white; /* Цвет текста */
+    padding: 5px 10px; /* Внутренние отступы 5px сверху и снизу, 10px слева и справа */
+    border-radius: 5px; /* Скругление углов 5px */
+}
+
+.car-card:hover .availability {
+    /* Отображение информации о доступности при наведении на элемент 'car-card' */
+    display: block; /* Показ элемента */
+}
+
+
