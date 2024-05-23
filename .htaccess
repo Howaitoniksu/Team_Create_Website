@@ -1,3 +1,2 @@
 RewriteEngine ON
 RewriteRule ^(.*)$ public/$1
-
