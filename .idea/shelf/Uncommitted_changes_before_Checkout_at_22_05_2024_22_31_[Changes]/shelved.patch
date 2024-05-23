@@ -1,0 +1,60 @@
+Index: AlterAuto/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <link rel=\"stylesheet\" href=\"./assets/styles/style.css\">\r\n    <title>Авторизация</title>\r\n</head>\r\n<body>\r\n    <div class=\"big_con\" style=\"height: 100vh; display: flex; justify-content: center; align-items: center;\">\r\n        <div class=\"block_auth\">\r\n            <h2 style=\"color: black; padding: 0;\">АВТОРИЗАЦИЯ</h2>\r\n            <input type=\"tel\" placeholder=\"phone\" class=\"enter\">\r\n            <button type=\"submit\" onclick=\"sendSms()\">Получить код</button>\r\n            <div id=\"message\" style=\"display:none;\"></div>\r\n            <script>\r\n                function generateRandomCode() {\r\n                    let code = \"\";\r\n                    for (let i = 0; i < 6; i++) {\r\n                        code += Math.floor(Math.random() * 10);\r\n                    }\r\n                    return code;\r\n                }\r\n                function sendSms() {\r\n                    const phoneNumber = document.querySelector('.enter').value;\r\n                    const code = generateRandomCode();\r\n                    // Формируем URL для отправки SMS\r\n                    const apiKey = 'TnJMkOMQlkIujqACXdndOgquVdy2';\r\n                    const url = `https://gate.smsaero.ru/v2/sms/send?number=${phoneNumber}&text=${encodeURIComponent('Ваш код: ' + code)}&api_key=${apiKey}&sign=SMS%20Aero`;\r\n                    const ur2 = 'https://email:api_key@gate.smsaero.ru/v2/sms/send?number=79990000000&text=your+text&sign=SMS Aero'\r\n                    // Отправляем запрос на сервер\r\n                    const xhr = new XMLHttpRequest();\r\n                    xhr.open('GET', url, true);\r\n                    xhr.onload = function() {\r\n                        if (xhr.status === 200) {\r\n                            console.log(`SMS отправлено на номер ${phoneNumber}: Код - ${code}`);\r\n                            document.getElementById('message').style.display = 'block';\r\n                            document.getElementById('message').innerText = 'Код отправлен на номер ' + phoneNumber;\r\n                        } else {\r\n                            console.error(`Ошибка отправки SMS на номер ${phoneNumber}: ${xhr.statusText}`);\r\n                            document.getElementById('message').style.display = 'block';\r\n                            document.getElementById('message').innerText = 'Ошибка отправки кода';\r\n                        }\r\n                    };\r\n                    xhr.onerror = function() {\r\n                        console.error(`Ошибка запроса на отправку SMS на номер ${phoneNumber}`);\r\n                        document.getElementById('message').style.display = 'block';\r\n                        document.getElementById('message').innerText = 'Ошибка запроса кода';\r\n                    };\r\n                    xhr.send();\r\n                }\r\n            </script>\r\n            <p class=\"p14\">Еще не с нами? <a href=\"registration.html\"><u>Зарегистрируйтесь!</u></a></p>\r\n        </div>\r\n    </div>\r\n</body>\r\n</html>
+===================================================================
+diff --git a/AlterAuto/index.html b/AlterAuto/index.html
+--- a/AlterAuto/index.html	
++++ b/AlterAuto/index.html	
+@@ -10,46 +10,11 @@
+     <div class="big_con" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+         <div class="block_auth">
+             <h2 style="color: black; padding: 0;">АВТОРИЗАЦИЯ</h2>
+-            <input type="tel" placeholder="phone" class="enter">
+-            <button type="submit" onclick="sendSms()">Получить код</button>
+-            <div id="message" style="display:none;"></div>
+-            <script>
+-                function generateRandomCode() {
+-                    let code = "";
+-                    for (let i = 0; i < 6; i++) {
+-                        code += Math.floor(Math.random() * 10);
+-                    }
+-                    return code;
+-                }
+-                function sendSms() {
+-                    const phoneNumber = document.querySelector('.enter').value;
+-                    const code = generateRandomCode();
+-                    // Формируем URL для отправки SMS
+-                    const apiKey = 'TnJMkOMQlkIujqACXdndOgquVdy2';
+-                    const url = `https://gate.smsaero.ru/v2/sms/send?number=${phoneNumber}&text=${encodeURIComponent('Ваш код: ' + code)}&api_key=${apiKey}&sign=SMS%20Aero`;
+-                    const ur2 = 'https://email:api_key@gate.smsaero.ru/v2/sms/send?number=79990000000&text=your+text&sign=SMS Aero'
+-                    // Отправляем запрос на сервер
+-                    const xhr = new XMLHttpRequest();
+-                    xhr.open('GET', url, true);
+-                    xhr.onload = function() {
+-                        if (xhr.status === 200) {
+-                            console.log(`SMS отправлено на номер ${phoneNumber}: Код - ${code}`);
+-                            document.getElementById('message').style.display = 'block';
+-                            document.getElementById('message').innerText = 'Код отправлен на номер ' + phoneNumber;
+-                        } else {
+-                            console.error(`Ошибка отправки SMS на номер ${phoneNumber}: ${xhr.statusText}`);
+-                            document.getElementById('message').style.display = 'block';
+-                            document.getElementById('message').innerText = 'Ошибка отправки кода';
+-                        }
+-                    };
+-                    xhr.onerror = function() {
+-                        console.error(`Ошибка запроса на отправку SMS на номер ${phoneNumber}`);
+-                        document.getElementById('message').style.display = 'block';
+-                        document.getElementById('message').innerText = 'Ошибка запроса кода';
+-                    };
+-                    xhr.send();
+-                }
+-            </script>
++            <input type="text" placeholder="Email" class="enter">
++            <input type="password" placeholder="Пароль" class="enter">
++            <button class="orange">
++                <a href="main.html" class="p14">ВОЙТИ</p>
++            </button>
+             <p class="p14">Еще не с нами? <a href="registration.html"><u>Зарегистрируйтесь!</u></a></p>
+         </div>
+     </div>
