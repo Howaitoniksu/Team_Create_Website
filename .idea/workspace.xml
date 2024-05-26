@@ -4,7 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41fce016-eedd-449a-84f0-8d7221fdbd70" name="Changes" comment="Connection with API, make Register" />
+    <list default="true" id="41fce016-eedd-449a-84f0-8d7221fdbd70" name="Changes" comment="Connection with API, make Register">
+      <change afterPath="$PROJECT_DIR$/LogIn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_05_2024_22_31__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_05_2024_22_31__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_05_2024_22_31__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_05_2024_22_31__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_05_2024_22_42__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_05_2024_22_42__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_05_2024_22_43__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_05_2024_22_43__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_05_2024_22_43__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_05_2024_22_43__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bisnes.html" beforeDir="false" afterPath="$PROJECT_DIR$/bisnes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bmwI4.html" beforeDir="false" afterPath="$PROJECT_DIR$/bmwI4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bmwIX.html" beforeDir="false" afterPath="$PROJECT_DIR$/bmwIX.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/econom.html" beforeDir="false" afterPath="$PROJECT_DIR$/econom.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electrocar.html" beforeDir="false" afterPath="$PROJECT_DIR$/electrocar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/katalog.html" beforeDir="false" afterPath="$PROJECT_DIR$/katalog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/komfort.html" beforeDir="false" afterPath="$PROJECT_DIR$/komfort.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/registration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportcar.html" beforeDir="false" afterPath="$PROJECT_DIR$/sportcar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/support.html" beforeDir="false" afterPath="$PROJECT_DIR$/support.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teslaSPlaid.html" beforeDir="false" afterPath="$PROJECT_DIR$/teslaSPlaid.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zeekr-007.html" beforeDir="false" afterPath="$PROJECT_DIR$/zeekr-007.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zvonok.html" beforeDir="false" afterPath="$PROJECT_DIR$/zvonok.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,21 +65,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JavaScript Debug.bisnes.html.executor": "Run",
-    "JavaScript Debug.registration.html.executor": "Run",
-    "Node.js.registration.js.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/OSPanel/home/AlterAuto",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.bisnes.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.registration.html.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.registration.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;BackEnd__Workzone&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/OSPanel/home/AlterAuto&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\OSPanel\home\AlterAuto\AlterAuto" />
@@ -81,6 +105,8 @@
       <updated>1716403252805</updated>
       <workItem from="1716403253846" duration="1083000" />
       <workItem from="1716405273048" duration="2175000" />
+      <workItem from="1716642411068" duration="426000" />
+      <workItem from="1716643357756" duration="1211000" />
     </task>
     <task id="LOCAL-00001" summary="Connection with API, make Register">
       <option name="closed" value="true" />
