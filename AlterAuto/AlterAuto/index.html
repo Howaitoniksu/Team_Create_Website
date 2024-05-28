@@ -6,6 +6,17 @@
     <link rel="stylesheet" href="./assets/styles/style.css">
     <title>Авторизация</title>
 </head>
+<style>
+ 
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #777;
+    }
+</style> 
 <body>
     <div class="big_con" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
         <div class="block_auth">
@@ -13,10 +24,13 @@
             <input type="text" placeholder="Email" class="enter">
             <input type="password" placeholder="Пароль" class="enter">
             <button class="orange">
-                <a href="main.html" class="p14">ВОЙТИ</p>
+                <a href="lifeAkk.html" class="p14">ВОЙТИ</p>
             </button>
             <p class="p14">Еще не с нами? <a href="registration.html"><u>Зарегистрируйтесь!</u></a></p>
+            <span class="close" onclick="window.location.href='main.html'">&times;</span> 
         </div>
+       
     </div>
+    
 </body>
 </html>
