@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <title>Заказать звонок</title>
+    <style>
+        .center {
+            text-align: center;
+            font-size: 0.75em;
+        }
+        .block_auth {
+            position: relative;
+        }
+        .close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="big_con" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+        <div class="block_auth">
+            <h2 style="color: black; padding: 0;">ЗАКАЗАТЬ ЗВОНОК</h2>
+            <p class="center">Для того, чтобы заказать звонок <br>введите свой номер телефона и код подтверждения</p>
+            <input type="text" id="phone" placeholder="Номер телефона" class="enter"> 
+            <button class="orange" onclick="checkPhone()">
+                <a href="main.html" class="p14">Получить код</a>
+            </button>
+            <span class="close" onclick="window.close()">&times;</span>
+        </div>
+    </div>
+
+    <script>
+        function checkPhone() {
+            let phoneInput = document.getElementById('phone').value;
+            let isValid = false;
+
+            // Проверка формата 89290390339
+            if (phoneInput.match(/^\d{11}$/)) { // 10 цифр
+                isValid = true;
+            }
+
+            // Проверка формата +7290390399
+            if (phoneInput.match(/^\+7\d{10}$/)) { // +7 и 10 цифр
+                isValid = true;
+            }
+
+            if (isValid) {
+                // Если номер телефона валидный, переходим на mainPage.html
+                window.location.href = 'main.html';
+            } else {
+                // Если номер телефона не валидный, выводим сообщение об ошибке (например, alert)
+                alert('Неверный формат номера телефона. Пожалуйста, введите номер в формате 89290390339 или +7290390399');
+            }
+        }
+    </script>
+
+</body>
+</html>
