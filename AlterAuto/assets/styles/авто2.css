@@ -237,3 +237,38 @@ p {
 }
 
 
+
+
+h1.in-stock { /* Создаем новый стиль с классом "in-stock" */
+    font-size: 1.2em; /* Уменьшаем размер шрифта */
+    padding: 10px; /* Добавляем отступы для рамки */
+    border: 1px solid #ccc; /* Добавляем границу */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    color: white; /* Белый цвет текста */
+    text-align: center; /* Выравнивание текста по центру */
+    border-radius: 5px; /* Скругленные углы рамки */
+}
+
+.centered-button button { /* Стили для кнопки */
+    font-size: 1.2em; /* Уменьшаем размер шрифта */
+    padding: 10px; /* Добавляем отступы для рамки */
+    border: 1px solid #ccc; /* Добавляем границу */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    color: white; /* Белый цвет текста */
+    text-align: center; /* Выравнивание текста по центру */
+    border-radius: 5px; /* Скругленные углы рамки */
+  }
+  .content2 {
+    position: relative; 
+    z-index: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Высота контента равна высоте viewport */
+    position: relative; 
+    z-index: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh
+}
