@@ -6,7 +6,6 @@ async function CallbackInput() {  const response = await fetch('http://localhost
     body: JSON.stringify({
         phone_number: document.getElementById('phone'),
     })
-    
 })
 const data = await response.json()
     if (!data.success) {
