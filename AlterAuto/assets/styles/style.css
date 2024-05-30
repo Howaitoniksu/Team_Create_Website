@@ -69,6 +69,11 @@ header {
     font-weight: 400;
     color: white;
 }
+.p15 {
+    font-family: 'Tac', sans-serif;
+   
+    color: black;
+}
 
 .requisites {
     display: flex;

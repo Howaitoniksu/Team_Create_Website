@@ -1,0 +1,40 @@
+
+    .car-cards img {
+        width: 580px;
+        height: 400px;
+    }
+    .car-cards1 img {
+        width: 500px;
+        height: 400px;
+    }
+    .car-cards3 img {
+        width: 580px;
+        height: 400px;
+    }
+    .car-cards4 img {
+        width: 580px;
+        height: 400px;
+    }
+    .car-cards5 img {
+        width: 580px;
+        height: 400px;
+    }
+    .car-cards6 img {
+        width: 580px;
+        height: 4
+        00px;
+    }
+    .car-cards7 img {
+        width: 580px;
+        height: 400px;
+    }
+    .series.centered-button {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.series.centered-button h2 {
+    margin: 0;
+}
