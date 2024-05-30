@@ -1,3 +1,0 @@
-index.html - страница авторизации
-main.html - основная страница
-registration.html - страница регистрации

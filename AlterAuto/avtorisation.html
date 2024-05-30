@@ -5,26 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/styles/style.css">
     <title>Авторизация</title>
-    <script>
-        function validateForm() {
-            var emailInput = document.getElementById("email");
-            var passwordInput = document.getElementById("password");
 
-            // Проверка на пустые поля
-            if (nameInput.value.trim() === "" || surnameInput.value.trim() === "" || phoneInput.value.trim() === "" || emailInput.value.trim() === "" || passwordInput.value.trim() === "") {
-                alert("Все поля должны быть заполнены.");
-                return false;
-            }
-
-            // Проверка на корректность email
-            var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            if (!emailRegex.test(emailInput.value)) {
-                alert("Введите корректный email.");
-                return false;
-            }
-            return true;
-        }
-    </script>
 </head>
 <body>
     <div class="big_con" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
@@ -41,6 +22,7 @@
             </div>
             <span class="close" onclick="window.location.href='main.html'">&times;</span>   
         </div>
+        <script src="assets/json/avtorisation.js"></script>
     </div>
 </body>
 </html>
