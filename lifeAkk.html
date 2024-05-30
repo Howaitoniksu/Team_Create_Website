@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/styles/style.css">
     <title>Личный кабинет</title>
-
+    <script src=""></script>
 </head>
 <body>
     <div class="big_con" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
@@ -22,10 +22,9 @@
                 
                 
             </form>
-            <!-- <button class="orange" onclick="checkForm()">
-                Сохранить изменения
-            </button> -->
-            <button class="orange"><a href="izmpassword.html"  class="p14">Изменить пароль</a></button>
+            <button class="orange" onclick="window.location.href= 'izmpassword.html'">
+                <span class="p14">Изменить пароль</span>
+            </button>
             <span class="close" onclick="window.location.href='main.html'">&times;</span>
             <div class="button-container">
                 <button class="half-orange orange" onclick="window.location.href='testDrive.html'">Записаться на тест-драйв</button>
