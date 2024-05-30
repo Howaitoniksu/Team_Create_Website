@@ -1,43 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>User Data</title>
 </head>
-
 <body>
   <button>Save</button>
   <script>
     document.querySelector("button").addEventListener("click", function() {
-      // Создаем данные для записи в файл CSV
       const data = [
         ["Имя 1", "+79290390339", "2023-03-01"],
         ["Имя 2", "+79290390340", "2023-03-02"],
         ["Имя 3", "+79290390341", "2023-03-03"],
       ];
 
-      // Преобразуем данные в строку в формате CSV
       const csvContent = data.map(row => row.join(",")).join("\n");
 
-      // Создаем объект XMLHttpRequest для отправки данных на сервер
-      const xhr = new XMLHttpRequest();
-      xhr.open("POST", "save.php", true); // true - асинхронный запрос
-      xhr.setRequestHeader("Content-Type", "text/csv"); // Устанавливаем тип содержимого CSV
-      xhr.onload = function() {
-        if (xhr.status === 200) {
-          console.log("Данные успешно сохранены в файл.");
-        } else {
-          console.error("Ошибка сохранения данных:", xhr.status);
-        }
-      };
-      xhr.onerror = function() {
-        console.error("Ошибка запроса:", xhr.error);
-      };
-      xhr.send(csvContent);
+      fetch("save.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain"
+        },
+        body: csvContent
+      })
+      .then(response => response.text())
+      .then(data => console.log(data))
+      .catch(error => console.error(error));
     });
   </script>
 </body>
-
 </html>
