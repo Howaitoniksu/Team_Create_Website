@@ -1,0 +1,66 @@
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: white;
+}
+#results {
+    position: fixed; /* Делаем блок фиксированным */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрируем блок */
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    display: none; /* Сначала скрываем результаты */
+    z-index: 10; /* Устанавливаем приоритет отрисовки */
+}
+.big_con {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease; /* Добавляем плавный переход */
+}
+.big_con.hidden {
+    opacity: 0; /* Скрываем при переходе */
+}
+#results .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: black; /* Цвет крестика */
+    font-size: 1.2em; /* Размер крестика */
+}
+/*izm parol*/
+
+.center {
+    text-align: center;
+    font-size: 0.75em;
+}
+.block_auth {
+    position: relative;
+}
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #ccc;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.half-orange {
+    width: 48%;
+    margin-top: 10px;
+}

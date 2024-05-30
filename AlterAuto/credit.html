@@ -4,47 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/credit.css">
     <title>Расчет кредита</title>
-    <style>
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            color: white;
-        }
-        #results {
-            position: fixed; /* Делаем блок фиксированным */
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Центрируем блок */
-            width: 300px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f8f8f8;
-            display: none; /* Сначала скрываем результаты */
-            z-index: 10; /* Устанавливаем приоритет отрисовки */
-        }
-        .big_con {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 0.5s ease; /* Добавляем плавный переход */
-        }
-        .big_con.hidden {
-            opacity: 0; /* Скрываем при переходе */
-        }
-        #results .close-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            color: black; /* Цвет крестика */
-            font-size: 1.2em; /* Размер крестика */
-        }
-    </style>
+
 </head>
 <body>
     <div class="big_con" id="main-container"> 
