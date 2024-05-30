@@ -5,9 +5,19 @@
     <title>автомобили</title>
     <link rel="stylesheet" type="text/css" href="./assets/styles/автомобили.css">
     <link rel="stylesheet" type="text/css" href="./assets/styles/авто2.css">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/background.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 </head>
 <body>
-    
+    <div class="background">
+        <img src="assets/imgs/fotka.jpg" alt="background" class="back_img">
+            <img src="assets/imgs/fotka.jpg" alt="background" class="back_img">
+            <div class="overlay"></div>
+    </div>
+
     <div class="content">
         <div class="navbar">
             <a href="katalog.html">Автомобили</a>
@@ -108,7 +118,28 @@
                 </a>
             </div>
         </div>
+        <div class="carousel-container">
+            <div class="owl-carousel">
+              <div class="item">
+                <img src="assets/katalog/бизнес/7i.webp" alt="i7">
+              </div>
+              <div class="item">
+                <img src="assets/katalog/бизнес/maybach.webp" alt="Maybach">
+              </div>
+      
+              <div class="item">
+                <img src="assets/katalog/бизнес/m7.webp" alt="7-Series">
+              </div>
+              <div class="item">
+                <img src="assets/katalog/бизнес/sclass.avif" alt="S-class">
+              </div>
+              <div class="item">
+                <img src="assets/katalog/бизнес/Мерседес бенц g 63 AMG.png" alt="Mersedes g63AMG">
+              </div>
+            </div>
+          </div>
     </div>
     <script src="assets/json/script.js"></script>
+    <script src="assets/json/lentaAvto.js"></script>
 </body>
 </html>
