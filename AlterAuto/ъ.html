@@ -1,47 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Data</title>
-</head>
-<body>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Phone Number</th>
-                <th>Date</th>
-            </tr>
-        </thead>
-        <tbody id="userData"></tbody>
-    </table>
-    <script>
-        const csvUrl = 'testDrive.csv';
-        const userDataTable = document.getElementById('userData');
 
-        fetch(csvUrl)
-            .then(response => response.text())
-            .then(data => {
-                const rows = data.split('\n');
-                rows.forEach(row => {
-                    const columns = row.split(',');
-                    const name = columns[0];
-                    const phoneNumber = columns[1];
-                    const date = columns[2];
-                    const rowElement = document.createElement('tr');
-                    const nameElement = document.createElement('td');
-                    const phoneNumberElement = document.createElement('td');
-                    const dateElement = document.createElement('td');
-                    nameElement.textContent = name;
-                    phoneNumberElement.textContent = phoneNumber;
-                    dateElement.textContent = date;
-                    rowElement.appendChild(nameElement);
-                    rowElement.appendChild(phoneNumberElement);
-                    rowElement.appendChild(dateElement);
-                    userDataTable.appendChild(rowElement);
-                });
-            });
-    </script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Data</title>
+</head>
+
+<body>
+  <input type="file" id="file" />
+  <button>Reading</button>
+  <script>
+    document.querySelector("button").addEventListener("click", function() {
+      let file = document.getElementById("file").files[0];
+      let reader = new FileReader();
+      reader.readAsText(file);
+      reader.onload = function() {
+        // Конвертируем содержимое файла в массив строк
+        const lines = reader.result.split("\n");
+        // Создаем таблицу для отображения данных
+        const table = document.createElement("table");
+        table.setAttribute("border", "1");
+        table.setAttribute("width", "100%");
+        // Создаем заголовок таблицы
+        const headerRow = table.insertRow();
+        headerRow.insertCell().textContent = "Имя";
+        headerRow.insertCell().textContent = "Телефон";
+        headerRow.insertCell().textContent = "Дата";
+        // Заполняем таблицу данными
+        for (let i = 1; i < lines.length; i++) {
+          const data = lines[i].split(",");
+          const row = table.insertRow();
+          row.insertCell().textContent = data[0];
+          row.insertCell().textContent = data[1];
+          row.insertCell().textContent = data[2];
+        }
+        // Добавляем таблицу на страницу
+        document.body.appendChild(table);
+      };
+      reader.onerror = function() {
+        console.log(reader.error);
+      };
+    });
+  </script>
 </body>
+
 </html>
