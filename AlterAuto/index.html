@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/style_LA.css">
+    <title>Авторизация</title>
+    <script src="LogIn.js"></script>
+</head>
+
+<body>
+    <div class="big_con" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+        <div class="block_auth">
+            <h2 style="color: black; padding: 0;">АВТОРИЗАЦИЯ</h2>
+            <input type="text" id="email" placeholder="Email" class="enter">
+            <input type="password" id="password" placeholder="Пароль" class="enter">
+            <button class="orange" onclick="LogIn()">
+                <span class="p14">Войти</span>
+            </button>
+            <p class="p14">Еще не с нами? <a href="registration.html"><u>Зарегистрируйтесь!</u></a></p>
+            <span class="close" onclick="window.location.href='mainPage.html'">&times;</span> 
+        </div>
+    </div>
+</body>
+</html>

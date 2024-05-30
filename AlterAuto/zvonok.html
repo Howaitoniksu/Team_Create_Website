@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/vvodkoda.css">
+    <title>Заказать звонок</title>
+
+</head>
+<body>
+    <div class="big_con" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+        <div class="block_auth">
+            <h2 style="color: black; padding: 0;">ЗАКАЗАТЬ ЗВОНОК</h2>
+            <p class="center">Для того, чтобы заказать звонок <br>введите свой номер телефона и код подтверждения</p>
+            <input type="text" id="phone" placeholder="Номер телефона" class="enter"> 
+            <button class="orange" onclick="checkPhone()">
+                <a href="mainPage.html" class="p14">Получить код</a>
+            </button>
+            <span class="close" onclick="window.close()">&times;</span>
+        </div>
+    </div>
+    <script src="assets/json/zvonok.js"></script>
+</body>
+</html>

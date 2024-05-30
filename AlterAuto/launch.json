@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Run Tests",
+        "type": "node",
+        "request": "launch",
+        "program": "${workspaceFolder}/node_modules/@playwright/test/playwright-test.js",
+        "args": ["test/kredit/**/*.test.js"],
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "neverOpen",
+        "sourceMaps": true,
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "NODE_ENV": "test"
+        }
+      }
+    ]
+  }

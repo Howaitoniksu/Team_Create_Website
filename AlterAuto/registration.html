@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <title>Регистрация</title>
+    <script src="assets/json/reg.js"></script>
+</head>
+<body>
+    <div class="big_con" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+        <div class="block_auth">
+            <h2 style="color: black; padding: 0;">РЕГИСТРАЦИЯ</h2>
+            <input type="text" id="name" placeholder="Имя" class="enter">
+            <input type="text" id="surname" placeholder="Фамилия" class="enter">
+            <input type="text" id="phone" placeholder="Номер телефона" class="enter">
+            <input type="text" id="email" placeholder="Email" class="enter">
+            <input type="password" id="password" placeholder="Пароль" class="enter">
+            <button class="orange" onclick="return validateForm()">
+                <a href="mainPage.html" class="p14">ЗАРЕГИСТРИРОВАТЬСЯ</a>
+            </button>
+            <span class="close" onclick="window.location.href='avtorisation.html'">&times;</span> 
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <title>Личный кабинет</title>
+
+</head>
+<body>
+    <div class="big_con" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+        <div class="block_auth">
+            <h2 style="color: black; padding: 0;">ЛИЧНЫЙ КАБИНЕТ</h2>
+            <div class="profile-picture" onclick="addPhoto()">
+                <span class="plus">+</span>
+            </div>
+           
+            <form>
+                <input type="text" id="name" placeholder="Имя" class="enter"> <br><br>
+                <input type="text" id="lastName" placeholder="Фамилия" class="enter"> <br><br>
+                <input type="text" id="phone" placeholder="Номер телефона" class="enter"> 
+                
+                
+            </form>
+            <button class="orange"><a href="izmpassword.html"  class="p14">Изменить пароль</a></button>
+            <span class="close" onclick="window.location.href='main.html'">&times;</span>
+            <div class="button-container">
+                <button class="half-orange orange" onclick="window.location.href='testDrive.html'">Записаться на тест-драйв</button>
+                <button class="half-orange orange" onclick="window.location.href='credit.html'">Рассчитать кредит</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/credit.css">
+    <title>Расчет кредита</title>
+
+</head>
+<body>
+    <div class="big_con" id="main-container"> 
+        <div class="block_auth">
+            <h2 style="color: black; padding: 0;">Расчет кредита</h2>
+            <input type="number" id="vehicle-price" placeholder="Введите стоимость автомобиля" class="enter">
+            <input type="number" id="loan-term" placeholder="Срок кредита (в месяцах)" class="enter">
+            <button class="orange" onclick="calculateCredit()">
+                Рассчитать
+            </button>
+            <span class="close" onclick="window.location.href='mainPage.html'">&times;</span> 
+        </div>
+       
+    </div>
+
+    <div id="results">
+        <button class="close-button" onclick="hideResults()">&#10006;</button>  
+        <h3>Результаты расчета</h3>
+        <p>Ежемесячный платеж: <span id="monthly-payment"></span></p>
+        <p>Переплата по процентам: <span id="total-interest"></span></p>
+        <p>Общая сумма выплат: <span id="total-payment"></span></p>
+        
+    </div>
+    <script src="assets/json/credit.js"></script>
+</body>
+</html>
