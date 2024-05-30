@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", () => {
+    AccountData()
+});
+
 async function AccountData() {
     const response = await fetch('http://localhost:8000/api/user/getUserByToken', {
 
@@ -10,11 +14,40 @@ async function AccountData() {
         })
     })
     const data = await response.json()
-    document.getElementById('name') = data.name 
-    if(!data.success) {
+    document.getElementById('name') = data.name,
+        document.getElementById('lastName') = data.surename,
+        document.getElementById('phone') = data.phone_number
+    if (!data.success) {
         return;
-    }else {
+    } else {
         window.location.href = 'index.html'
+    }
+    localStorage.setItem('token', data.token)
 }
-localStorage.setItem('token', data.token)
+
+function addPhoto() {
+    // Создаем новый элемент input type="file"
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
+
+    // Добавляем обработчик события change к элементу input
+    input.addEventListener('change', function () {
+        // Получаем выбранный файл
+        const file = input.files[0];
+        // Читаем файл как base64 строку
+        const reader = new FileReader();
+        reader.onload = function () {
+            // Устанавливаем base64 строку в качестве фона элемента profile-picture
+            document.querySelector('.profile-picture').style.backgroundImage = `url(${reader.result})`;
+            // Remove the "+" sign after adding a photo
+            const plusSign = document.querySelector('.profile-picture .plus');
+            if (plusSign) {
+                plusSign.remove();
+            }
+        }
+        reader.readAsDataURL(file);
+    });
+    // Имитируем клик по элементу input
+    input.click();
 }

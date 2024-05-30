@@ -4,7 +4,12 @@ async function CallbackInput() {  const response = await fetch('http://localhost
         'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-        phone_number: document.getElementById(''),
+        phone_number: document.getElementById('phone'),
     })
+    
 })
+const data = await response.json()
+    if (!data.success) {
+        return;
+    }
 }
