@@ -46,3 +46,45 @@
 </body>
 
 </html>
+<!-- 
+
+<div class="car-cards" id="car-cards-in-stock">
+  <input type="file" id="file" />
+  <button>Reading</button>
+              <script>
+              document.querySelector("button").addEventListener("click", function() {
+  let file = document.getElementById("file").files[0];
+  let reader = new FileReader();
+  reader.readAsText(file);
+  reader.onload = function() {
+      const lines = reader.result.split("\n");
+      const table = document.createElement("table");
+      table.setAttribute("border", "1");
+      table.setAttribute("width", "100%");
+      // Создаем заголовок таблицы
+      const headerRow = table.insertRow();
+      const headers = lines[0].split(",");
+      headers.forEach(header => {
+      const th = document.createElement("th");
+      th.textContent = header;
+      headerRow.appendChild(th);
+      });
+      // Заполняем таблицу данными
+      for (let i = 1; i < lines.length; i++) {
+      const data = lines[i].split(",");
+      const row = table.insertRow();
+      data.forEach(cell => {
+          const td = document.createElement("td");
+          td.textContent = cell;
+          row.appendChild(td);
+      });
+      }
+      // Добавляем таблицу на страницу
+      document.body.appendChild(table);
+  };
+  reader.onerror = function() {
+      console.log(reader.error);
+  };
+  });
+  </script>
+</div> -->
