@@ -14,17 +14,27 @@
             <input type="text" placeholder="Имя" class="enter" id="nameInput">
             <input type="tel" placeholder="Телефон" class="enter" id="phoneInput" maxlength="11" oninput="formatPhoneNumber(this)">
             <input type="date" placeholder="Дата" class="enter" id="dateInput" oninput="checkDate(this)">
-            <button class="orange" onclick="sendForm()">
-                Записаться
-            </button>
+            
+                <button class="orange" onclick="saveToCSV()">
+                    Записаться
+                </button>
+                <button class="orange" onclick="downloadCSV()">
+                    Скачать файл
+                </button>
+    
             <div class="support-info">
                 <h3 style="font-size: 16px;">Контактная информация:</h3>
                 <p style="font-size: 14px;">Телефон: +7 (123) 456-78-90</p>
                 <p style="font-size: 14px;">Email: support@example.com</p>
+                
                 <button class="close-button" onclick="location.href='lifeAkk.html'">&#10006;</button>
             </div>
         </div>
     </div>
+      
     <script src="assets/json/testdrive.js"></script>
+
 </body>
 </html>
+
+
