@@ -97,11 +97,65 @@ body {
     width: 1800px;
     margin: 0 auto;
 }
+
 .logo {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
+.requisites {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.requisites .p18 {
+    color: #C78E66;
+    cursor: pointer;
+}
+
+.requisites img {
+    padding-right: 16px;
+}
+
+.requisites .line {
+    margin: 0 70px;
+}
+
+.opacity {
+    position: relative; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 310px;
+height: 40px;
+display: flex;
+justify-content: space-around;
+align-items: center;
+border: 1px solid white;
+background-color: rgba(255, 255, 255, 0);
+transition: all ease 0.3s;
+cursor: pointer;
+}
+
+.opacity:hover {
+    background-color: #C78E66;
+    border: 1px solid #C78E66;
+}
+
+.arrow svg {
+    width: 9px;
+    display: flex;
+    justify-content: center;
+    transition: all ease 0.3s;
+}
+
+.opacity:hover svg path {
+    stroke: white;
+}
+
 
 .line {
     border: 1px solid #C78E66;
@@ -179,6 +233,12 @@ cursor: pointer;
    
 }
 
+.team-container {
+    display: flex; /* Размещение блоков в ряд */
+    flex-wrap: wrap; /* Перенос блоков на новую строку, если не хватает места */
+    justify-content: center; /* Центрирование по горизонтали */
+    gap: 20px; /* Отступы между блоками */
+}
 .back_img {
     width: 100%;
     height: 100%;
@@ -188,6 +248,8 @@ cursor: pointer;
 .content {
     position: relative; 
     z-index: 1;
+    color: rgb(255, 255, 255); 
+    margin-top: 100px; 
      
 }
 .overlay {
@@ -197,4 +259,122 @@ cursor: pointer;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    /* Дублирующие стили для элемента с классом 'logo' */
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+}
+
+.car-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+.car-card {
+    /* Стили для элементов с классом 'car-card' */
+    position: relative; 
+    margin: 10px;
+    width: calc(25% - 20px);
+    overflow: hidden; /* Скрытие содержимого, выходящего за границы */
+    transition: transform 0.3s; /* Плавное изменение свойства трансформации за 0.3 секунды */
+    background: white; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    padding: 10px; 
+}
+
+.car-card:hover {
+    /* Стили для наведения на элемент с классом 'car-card' */
+    transform: scale(1.1); /* Увеличение масштаба при наведении */
+}
+
+.car-card h2, .car-card p {
+    /* Стили для заголовков и параграфов внутри элемента 'car-card' */
+    color: black; 
+    text-align: center;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.car-card img {
+    width: 100%;
+    height: 150px; /* adjust the height to your desired value */
+    object-fit: cover;
+  }
+.car-info {
+    /* Стили для информации об автомобиле */
+    background-color: rgba(255, 255, 255, 0.8); /* Цвет фона с прозрачностью */
+    position: absolute; /* Абсолютное позиционирование */
+    bottom: 0; /* Расположение внизу */
+    width: 100%; /* Ширина 100% */
+    text-align: center; /* Выравнивание по центру */
+    padding: 10px; /* Внутренние отступы 10px */
+}
+
+.availability {
+    /* Стили для информации о доступности автомобиля */
+    display: none; /* Начальное скрытие элемента */
+    position: absolute; /* Абсолютное позиционирование */
+    bottom: 10px; /* Расположение снизу 10px */
+    left: 50%; /* Расположение по центру по горизонтали */
+    transform: translateX(-50%); /* Центрирование по горизонтали */
+    background-color: rgba(0, 0, 0, 0.7); /* Цвет фона с прозрачностью */
+    color: white; /* Цвет текста */
+    padding: 5px 10px; /* Внутренние отступы 5px сверху и снизу, 10px слева и справа */
+    border-radius: 5px; /* Скругление углов 5px */
+}
+
+.car-card:hover .availability {
+    /* Отображение информации о доступности при наведении на элемент 'car-card' */
+    display: block; /* Показ элемента */
+}
+
+h1.in-stock { /* Создаем новый стиль с классом "in-stock" */
+    font-size: 1.2em; /* Уменьшаем размер шрифта */
+    padding: 10px; /* Добавляем отступы для рамки */
+    border: 1px solid #ccc; /* Добавляем границу */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    color: white; /* Белый цвет текста */
+    text-align: center; /* Выравнивание текста по центру */
+    border-radius: 5px; /* Скругленные углы рамки */
+}
+
+.centered-button button { /* Стили для кнопки */
+    font-size: 1.2em; /* Уменьшаем размер шрифта */
+    padding: 10px; /* Добавляем отступы для рамки */
+    border: 1px solid #ccc; /* Добавляем границу */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    color: white; /* Белый цвет текста */
+    text-align: center; /* Выравнивание текста по центру */
+    border-radius: 5px; /* Скругленные углы рамки */
+  }
+  .content2 {
+    position: relative; 
+    z-index: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Высота контента равна высоте viewport */
+    position: relative; 
+    z-index: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 33px 0;
+}
+
+.cl {
+    margin: 0 auto;
+    background-color: #22242B;
 }
