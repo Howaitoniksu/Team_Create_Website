@@ -1,35 +1,12 @@
 
 @import url(../fonts/font.css);
 
+
     .car-cards img {
         width: 580px;
         height: 400px;
     }
-    .car-cards1 img {
-        width: 400px;
-        height: 500px;
-    }
-    .car-cards2 img {
-        width: 500px;
-        height: 500px;
-    }
-    .car-cards3 img {
-        width: 400px;
-        height: 500px;
-    }
-    .car-cards5 img {
-        width: 580px;
-        height: 400px;
-    }
-    .car-cards6 img {
-        width: 580px;
-        height: 4
-        00px;
-    }
-    .car-cards7 img {
-        width: 580px;
-        height: 400px;
-    }
+
     .series.centered-button {
     text-align: center;
     display: flex;
@@ -125,7 +102,9 @@ body {
 }
 
 .opacity {
-    position: relative; 
+    position: absolute; /* Кнопка теперь в абсолютном позиционировании */
+    top: 10px; /* Отступ от верхнего края */
+    right: 20px;
     background: none;
     border: none;
     cursor: pointer;
@@ -143,6 +122,7 @@ cursor: pointer;
 .opacity:hover {
     background-color: #C78E66;
     border: 1px solid #C78E66;
+    
 }
 
 .arrow svg {
@@ -186,7 +166,9 @@ cursor: pointer;
     color: white;
 }
 .opacity {
-    position: relative; 
+    position: absolute; /* Кнопка теперь в абсолютном позиционировании */
+    top: 10px; /* Отступ от верхнего края */
+    right: 20px;
     background: none;
     border: none;
     cursor: pointer;
@@ -278,7 +260,7 @@ cursor: pointer;
     /* Стили для элементов с классом 'car-card' */
     position: relative; 
     margin: 10px;
-    width: calc(25% - 20px);
+    width: calc(50% - 0px);
     overflow: hidden; /* Скрытие содержимого, выходящего за границы */
     transition: transform 0.3s; /* Плавное изменение свойства трансформации за 0.3 секунды */
     background: white; 
@@ -332,9 +314,22 @@ cursor: pointer;
     /* Отображение информации о доступности при наведении на элемент 'car-card' */
     display: block; /* Показ элемента */
 }
-
+@media (max-width: 768px) {
+    .car-card {
+      width: 100%;
+    }
+  }
 h1.in-stock { /* Создаем новый стиль с классом "in-stock" */
     font-size: 1.2em; /* Уменьшаем размер шрифта */
+    padding: 10px; /* Добавляем отступы для рамки */
+    border: 1px solid #ccc; /* Добавляем границу */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    color: white; /* Белый цвет текста */
+    text-align: center; /* Выравнивание текста по центру */
+    border-radius: 5px; /* Скругленные углы рамки */
+}
+h2.in-stock { /* Создаем новый стиль с классом "in-stock" */
+    font-size: 4.0em;
     padding: 10px; /* Добавляем отступы для рамки */
     border: 1px solid #ccc; /* Добавляем границу */
     background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
