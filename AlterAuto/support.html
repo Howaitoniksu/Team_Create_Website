@@ -15,9 +15,12 @@
             <input type="text" placeholder="Имя" class="enter" id="nameInput">
             <input type="email" placeholder="Email" class="enter" id="emailInput" oninput="validateEmail(this)"> 
             <textarea placeholder="Опишите проблему" class="enter" style="height: 100px;" id="messageInput"></textarea>
-            <button class="orange" onclick="sendForm()">
-                <a href="mainPage.html" class="p14">Отправить</a>
-            </button>
+                <button class="orange" onclick="saveToCSV()">
+                    Отправить
+                </button>
+                <button class="orange" onclick="downloadCSV()">
+                    Скачать файл
+                </button>
       
             <div class="support-info">
                 <h3 style="font-size: 16px;">Часы работы службы поддержки:</h3>
@@ -30,32 +33,6 @@
             </div>
         </div>
     </div>
-
-
-    <script>
-        function validateEmail(input) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(input.value)) {
-                input.style.border = "1px solid red"; // Красная рамка, если email не валиден
-            } else {
-                input.style.border = "1px solid #C78E66"; // Стандартная рамка, если email валиден
-            }
-        }
-
-        function sendForm() {
-            const name = document.getElementById('nameInput').value;
-            const email = document.getElementById('emailInput').value;
-            const message = document.getElementById('messageInput').value;
-
-            // Проверка валидности email
-            const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-            if (name && isValidEmail && message) {
-                alert("Смс отправлено");
-            } else {
-                alert("Пожалуйста, заполните все поля.");
-            }
-        }
-    </script>
+    <script src="assets/json/suppotr.js"></script>
 </body>
 </html>
