@@ -24,7 +24,7 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => [
+                'name' => [
                 'required',
                 'string',
                 'max:255'
@@ -51,7 +51,7 @@ class RegisterRequest extends FormRequest
                 'string',
                 'max:255',
                 'unique:users',
-                'regex:/^(\+7|8)?^\d{11}$/'
+                'regex:/^(\+7|8)?[\s]?[(]?[0-9]{3}[)]?[\s]?[0-9]{3}[-]?[0-9]{2}[-]?[0-9]{2}$/'
             ],
         ];
     }
