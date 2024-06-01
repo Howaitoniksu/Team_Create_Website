@@ -27,13 +27,13 @@ class StoreRequest extends FormRequest
             'phone_number' => [
                 'required',
                 'string',
-                'regex:/^(\+7|8)?[\s]?[(]?[0-9]{3}[)]?[\s]?[0-9]{3}[-]?[0-9]{2}[-]?[0-9]{2}$/'
+                'regex:/^(\+7|8)?^\d{11}$/'
             ],
         ];
     }
 
-    public function failedValidation(Validator $validator)
+   /* public function failedValidation(Validator $validator)
     {
         throw new ValidationException($validator, response()->json(['errors' => $validator->errors()], 422));
-    }
+    }*/
 }

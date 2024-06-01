@@ -23,10 +23,10 @@ Route::group(['prefix' => 'auth'], function () {
 });
 
 Route::group(['prefix' => 'callback'], function () {
-    Route::post('/', [CallbackController::class, 'store']);
+    Route::post('/store', [CallbackController::class, 'store']);
 });
 
 Route::group(['prefix' => 'user'], function () {
-    Route::get('/', [UserController::class, 'getUserByToken']);
+    Route::get('/getUserByToken', [UserController::class, 'getUserByToken']);
     Route::post('/code', [UserController::class, 'sendCode']);
 });

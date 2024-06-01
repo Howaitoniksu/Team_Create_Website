@@ -10,7 +10,6 @@ class CallbackController extends Controller
     public function store(StoreRequest $request)
     {
         $data = $request->validated();
-
         Callback::query()
             ->create($data);
 
