@@ -12,7 +12,7 @@ async function AccountData() {
         },
     })
     const data = await response.json()
-    document.getElementById('name') = data.name,
+        document.getElementById('name') = data.name,
         document.getElementById('lastName') = data.surename,
         document.getElementById('phone') = data.phone_number
     if (!data.success) {
