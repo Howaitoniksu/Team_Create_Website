@@ -12,6 +12,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    top: 200px;
 }
 
 .series.centered-button h2 {
@@ -226,7 +227,34 @@ cursor: pointer;
     height: 100%;
     object-fit: cover; 
 }
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; /* Сначала скрываем кнопку */
+}
 
+.back-to-top button {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-to-top button:hover {
+    background-color: #1a1a1a;
+}
+
+/* Добавьте стиль для скрытия кнопки, когда страница прокручена меньше, чем на 100 пикселей */
+.back-to-top {
+    display: none;
+}
+.back-to-top.show {
+    display: block;
+}
 .content {
     position: relative; 
     z-index: 1;
