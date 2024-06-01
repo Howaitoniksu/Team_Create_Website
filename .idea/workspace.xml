@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="41fce016-eedd-449a-84f0-8d7221fdbd70" name="Changes" comment="Make some features">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zeekr-007.html" beforeDir="false" afterPath="$PROJECT_DIR$/zeekr-007.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/changePassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/changePassword.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +90,7 @@
       <workItem from="1717134510293" duration="4874000" />
       <workItem from="1717214127826" duration="388000" />
       <workItem from="1717214557134" duration="8797000" />
+      <workItem from="1717253129062" duration="1389000" />
     </task>
     <task id="LOCAL-00001" summary="Connection with API, make Register">
       <option name="closed" value="true" />
@@ -123,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717215773708</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Make some features">
+      <option name="closed" value="true" />
+      <created>1717253174858</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717253174858</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

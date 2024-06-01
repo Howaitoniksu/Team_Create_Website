@@ -24,6 +24,4 @@ const changePassword = async () => {
 	}
 
     window.location.href = 'lifeAkk.html'
-
-	return response.json();
 };
