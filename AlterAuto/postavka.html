@@ -5,12 +5,14 @@
     <title>автомобили</title>
     <link rel="stylesheet" type="text/css" href="./assets/styles/автомобили.css">
     <link rel="stylesheet" type="text/css" href="./assets/styles/авто2.css">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/table.css">
     <link rel="stylesheet" type="text/css" href="./assets/styles/background.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+
 </head>
 <body>
     <div class="background">
@@ -36,42 +38,43 @@
         </div>
         <h1 class="in-stock">В наличии</h1>
         <div class="car-cards" id="car-cards-in-stock">
-            <input type="file" id="file" />
-            <button>Reading</button>
-                        <script>
-                        document.querySelector("button").addEventListener("click", function() {
-            let file = document.getElementById("file").files[0];
-            let reader = new FileReader();
-            reader.readAsText(file);
-            reader.onload = function() {
-                const lines = reader.result.split("\n");
-                const table = document.createElement("table");
-                table.setAttribute("border", "1");
-                table.setAttribute("width", "100%");
-                // Создаем заголовок таблицы
-                const headerRow = table.insertRow();
-                const headers = lines[0].split(",");
-                headers.forEach(header => {
-                const th = document.createElement("th");
-                th.textContent = header;
-                headerRow.appendChild(th);
-                });
-                // Заполняем таблицу данными
-                for (let i = 1; i < lines.length; i++) {
-                const data = lines[i].split(",");
-                const row = table.insertRow();
-                data.forEach(cell => {
-                    const td = document.createElement("td");
-                    td.textContent = cell;
-                    row.appendChild(td);
-                });
-                }
-                // Добавляем таблицу на страницу
-                document.body.appendChild(table);
-            };
-            reader.onerror = function() {
-                console.log(reader.error);
-            };
+            <button id="readData">Прочитать данные</button>
+            <div id="tableContainer"></div> 
+            <script>
+            document.getElementById("readData").addEventListener("click", function() {
+                fetch('https://raw.githubusercontent.com/nljubivaya/csv/master/postavka.csv') 
+                    .then(response => response.text())
+                    .then(data => {
+                        Papa.parse(data, {
+                            encoding: 'UTF-8',
+                            complete: function(results) {
+                                const lines = results.data;
+                                const table = document.createElement("table");
+                                table.setAttribute("border", "1");
+                                table.setAttribute("width", "100%");
+                                const headerRow = table.insertRow();
+                                const headers = lines[0];
+                                headers.forEach(header => {
+                                    const th = document.createElement("th");
+                                    th.textContent = header;
+                                    headerRow.appendChild(th);
+                                });
+                                for (let i = 1; i < lines.length; i++) {
+                                    const data = lines[i];
+                                    const row = table.insertRow();
+                                    for (let j = 0; j < data.length; j++) {
+                                        const td = document.createElement("td");
+                                        td.textContent = data[j];
+                                        row.appendChild(td);
+                                    }
+                                }
+                                document.getElementById("tableContainer").appendChild(table);
+                            }
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Ошибка при чтении данных:', error);
+                    });
             });
             </script>
         </div>
@@ -102,10 +105,17 @@
                 <button id="scrollTopBtn" onclick="topFunction()" title="Вернуться в начало">Наверх</button>
             </div>
           </div>
-          
     </div>
+    <script src="assets/json/teamAdding.js"></script>
     <script src="assets/json/script.js"></script>
     <script src="assets/json/lentaAvto.js"></script>
+
+    <script>
+        // Функция для прокрутки наверх
+        function topFunction() {
+            document.body.scrollTop = 0; // Для Chrome, Safari и Opera
+            document.documentElement.scrollTop = 0; // Для IE и Firefox
+        }
+    </script>
 </body>
 </html>
-
