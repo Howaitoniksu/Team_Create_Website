@@ -93,3 +93,60 @@ test('все поля заполнены правильно', () => {
   
     expect(() => checkDate(inputDate)).toThrowError("Дата должна быть больше или равна сегодняшней дате");
   });
+
+
+  // Проверка на пустое поле email test1
+  test('Проверка на пустое поле email', () => {
+    expect(() => validateForm('Иван', 'Иванов', '89290390339', '', 'password123')).toThrowError("Все поля должны быть заполнены.");
+  });
+
+
+  //успешная отправка запроса (test2)
+const CallbackInput = require('./1callback');
+
+describe('CallbackInput', () => {
+  test('Успешная отправка запроса', async () => {
+    const phoneNumber = '+79290390339';
+
+    // Мокинг fetch API
+    global.fetch = jest.fn().mockResolvedValue({
+      json: () => Promise.resolve({ success: true }),
+    });
+
+    await CallbackInput(phoneNumber);
+
+    // Проверка, что fetch был вызван с правильными аргументами
+    expect(fetch).toHaveBeenCalledWith('http://localhost:8000/api/callbacks', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ phone_number: phoneNumber }),
+    });
+  });
+//неуспешная отправка запроса (test3)
+  test('Неуспешная отправка запроса', async () => {
+    const phoneNumber = '+79290390339';
+
+    // Мокинг fetch API
+    global.fetch = jest.fn().mockResolvedValue({
+      json: () => Promise.resolve({ success: false }),
+    });
+
+    await CallbackInput(phoneNumber);
+
+    // Проверка, что fetch был вызван с правильными аргументами
+    expect(fetch).toHaveBeenCalledWith('http://localhost:8000/api/callbacks', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ phone_number: phoneNumber }),
+    });
+  });
+});
+
+
+
+
+
